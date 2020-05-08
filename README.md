@@ -16,7 +16,7 @@ Setup steps:
 
 6. In terminal check docker is running with command: " docker ps -a "
 
-7. In terminal in project folder execute: " docker compose up -d "
+7. In terminal in project folder execute: " docker-compose up -d "
 
 8. In terminal check docker container is running: " docker ps "
 
