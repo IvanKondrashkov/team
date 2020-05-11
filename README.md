@@ -22,7 +22,7 @@ Setup steps:
 
 9. In terminal execute: " docker exec -it postgres-10 bash "
 
-10. In terminal execute: " createdb portal -U postgres -E utf8 "
+10. In terminal execute: " createdb app_db -U postgres -E utf8 "
 
 10. In terminal execute: " exit "
 
