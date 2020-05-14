@@ -32,4 +32,4 @@ docker stop postgres-10
 
 You can use [Swagger](http://127.0.0.1:8080/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config#/)
 
-"Хм, интересно, получится? Привет из Снежинска"
+Snezhinsk online
