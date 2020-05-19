@@ -1,4 +1,4 @@
-package ru.gwp.team.app._example.components;
+package ru.gwp.team.app.components;
 
 import lombok.*;
 import ru.gwp.team.app.components.BaseMaterial;
