@@ -16,13 +16,13 @@ Setup steps:
 
 6. In terminal check docker is running with command: " docker ps -a "
 
-7. In terminal in project folder execute: " docker compose up -d "
+7. In terminal in project folder execute: " docker-compose up -d "
 
 8. In terminal check docker container is running: " docker ps "
 
 9. In terminal execute: " docker exec -it postgres-10 bash "
 
-10. In terminal execute: " createdb portal -U postgres -E utf8 "
+10. In terminal execute: " createdb app_db -U postgres -E utf8 "
 
 10. In terminal execute: " exit "
 

@@ -1,9 +1,9 @@
-package ru.gwp.team.app.services;
+package ru.gwp.team.app._example.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ru.gwp.team.app.components.ExampleEntity;
-import ru.gwp.team.app.repo.ExampleRepo;
+import ru.gwp.team.app._example.components.ExampleEntity;
+import ru.gwp.team.app._example.repos.ExampleRepo;
 
 import java.util.List;
 import java.util.Optional;
