@@ -1,12 +1,12 @@
-package ru.gwp.team.app.controllers;
+package ru.gwp.team.app._example.controllers;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import ru.gwp.team.app.components.ExampleEntity;
-import ru.gwp.team.app.services.ExampleService;
+import ru.gwp.team.app._example.components.ExampleEntity;
+import ru.gwp.team.app._example.services.ExampleService;
 
 import java.util.List;
 import java.util.UUID;

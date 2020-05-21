@@ -1,7 +1,6 @@
 package ru.gwp.team.app.components;
 
 import lombok.*;
-import ru.gwp.team.core.BaseEntity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,20 +11,15 @@ import javax.validation.constraints.Size;
 @Entity
 @EqualsAndHashCode(callSuper = true)
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @ToString(callSuper = true)
-public final class ExampleEntity extends BaseEntity {
+public class Cement extends BaseMaterial {
 
     @NotNull
     @NotEmpty
-    @Size(max = 128)
-    @Column(length = 128)
-    private String title;
-
-    @NotNull
-    @Size(max = 512)
-    @Column(length = 512)
-    private String description;
+    @Size(max = 32)
+    @Column(length = 32)
+    private String label;
 
 }

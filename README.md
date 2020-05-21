@@ -22,7 +22,7 @@ Setup steps:
 
 9. In terminal execute: " docker exec -it postgres-10 bash "
 
-10. In terminal execute: " createdb portal -U postgres -E utf8 "
+10. In terminal execute: " createdb app_db -U postgres -E utf8 "
 
 10. In terminal execute: " exit "
 
@@ -31,5 +31,3 @@ docker start postgres-10
 docker stop postgres-10
 
 You can use [Swagger](http://127.0.0.1:8080/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config#/)
-
-Это сделал Пермяк
