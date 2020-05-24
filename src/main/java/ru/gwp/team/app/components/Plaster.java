@@ -3,7 +3,7 @@ package ru.gwp.team.app.components;
 import lombok.*;
 
 import javax.persistence.Column;
-import javax .persistence.Entity;
+import javax.persistence.Entity;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
