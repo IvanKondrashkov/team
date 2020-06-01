@@ -2,40 +2,43 @@ package ru.gwp.team.app.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ru.gwp.team.app.components.ExampleEntity;
-import ru.gwp.team.app.repo.ExampleRepo;
+import ru.gwp.team.app.components.WireMesh;
+import ru.gwp.team.app.repos.WireMeshRepo;
+import ru.gwp.team.core.BaseService;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
 @Service
-public final class ExampleService {
+public final class WireMeshService extends BaseService {
 
-    private final ExampleRepo exampleRepo;
+    private final WireMeshRepo wireMeshRepo;
 
     @Autowired
-    ExampleService(ExampleRepo exampleRepo) {
-        this.exampleRepo = exampleRepo;
+    WireMeshService(WireMeshRepo wireMeshRepo) {
+        this.wireMeshRepo = wireMeshRepo;
     }
 
-    public List<ExampleEntity> findAll() {
-        return exampleRepo.findAll();
+    public List<WireMesh> findAll() {
+        return wireMeshRepo.findAll();
     }
 
-    public Optional<ExampleEntity> findById(UUID id) {
-        return exampleRepo.findById(id);
+    public Optional<WireMesh> findById(UUID id) {
+        return wireMeshRepo.findById(id);
     }
 
-    public Optional<ExampleEntity> create(ExampleEntity entity) {
-        return Optional.of(exampleRepo.save(entity));
+    public Optional<WireMesh> create(WireMesh entity) {
+        return Optional.of(wireMeshRepo.save(entity));
     }
 
-    public Optional<ExampleEntity> update(UUID id, ExampleEntity entity) {
+    public Optional<WireMesh> update(UUID id, WireMesh entity) {
         return findById(id)
                 .map(record -> {
-                    record.setTitle(entity.getTitle());
-                    record.setDescription(entity.getDescription());
+                    setBaseFeatures(record, entity);
+                    record.setMaterial(entity.getMaterial());
+                    record.setSquareSize(entity.getSquareSize());
+                    record.setRodDiameter(entity.getRodDiameter());
                     return create(record);
                 })
                 .orElse(Optional.empty());
@@ -44,7 +47,7 @@ public final class ExampleService {
     public Optional<Boolean> deleteById(UUID id) {
         return findById(id)
                 .map(record -> {
-                    exampleRepo.deleteById(id);
+                    wireMeshRepo.deleteById(id);
                     return Optional.of(Boolean.TRUE);
                 })
                 .orElse(Optional.empty());
