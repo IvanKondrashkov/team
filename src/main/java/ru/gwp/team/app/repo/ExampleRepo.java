@@ -1,9 +1,9 @@
-package ru.gwp.team.app.repo;
+package ru.gwp.team.app.repos;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import ru.gwp.team.app.components.ExampleEntity;
+import ru.gwp.team.app.components.WireMesh;
 
 import java.util.UUID;
 
-public interface ExampleRepo extends JpaRepository<ExampleEntity, UUID> {
+public interface WireMeshRepo extends JpaRepository<WireMesh, UUID> {
 }
