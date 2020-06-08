@@ -43,14 +43,14 @@ public final class WireMeshController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<WireMesh> create(@PathVariable("id") String id, @RequestBody WireMesh entity) {
+    public ResponseEntity<WireMesh> update(@PathVariable("id") String id, @RequestBody WireMesh entity) {
         return wireMeshService.update(UUID.fromString(id), entity)
                 .map(record -> ResponseEntity.ok().body(record))
                 .orElse(ResponseEntity.notFound().build());
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Boolean> create(@PathVariable("id") String id) {
+    public ResponseEntity<Boolean> delete(@PathVariable("id") String id) {
         return wireMeshService.deleteById(UUID.fromString(id))
                 .map(result -> ResponseEntity.ok().body(result))
                 .orElse(ResponseEntity.notFound().build());

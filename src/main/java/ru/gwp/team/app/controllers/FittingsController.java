@@ -43,14 +43,14 @@ public final class FittingsController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Fittings> create(@PathVariable("id") String id, @RequestBody Fittings entity) {
+    public ResponseEntity<Fittings> update(@PathVariable("id") String id, @RequestBody Fittings entity) {
         return fittingsService.update(UUID.fromString(id), entity)
                 .map(record -> ResponseEntity.ok().body(record))
                 .orElse(ResponseEntity.notFound().build());
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Boolean> create(@PathVariable("id") String id) {
+    public ResponseEntity<Boolean> delete(@PathVariable("id") String id) {
         return fittingsService.deleteById(UUID.fromString(id))
                 .map(result -> ResponseEntity.ok().body(result))
                 .orElse(ResponseEntity.notFound().build());

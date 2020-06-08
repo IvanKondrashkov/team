@@ -43,14 +43,14 @@ public final class PlasterController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Plaster> create(@PathVariable("id") String id, @RequestBody Plaster entity) {
+    public ResponseEntity<Plaster> update(@PathVariable("id") String id, @RequestBody Plaster entity) {
         return plasterService.update(UUID.fromString(id), entity)
                 .map(record -> ResponseEntity.ok().body(record))
                 .orElse(ResponseEntity.notFound().build());
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Boolean> create(@PathVariable("id") String id) {
+    public ResponseEntity<Boolean> delete(@PathVariable("id") String id) {
         return plasterService.deleteById(UUID.fromString(id))
                 .map(result -> ResponseEntity.ok().body(result))
                 .orElse(ResponseEntity.notFound().build());

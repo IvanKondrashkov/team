@@ -42,14 +42,14 @@ public final class ProfileController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Profile> create(@PathVariable("id") String id, @RequestBody Profile entity) {
+    public ResponseEntity<Profile> update(@PathVariable("id") String id, @RequestBody Profile entity) {
         return profileService.update(UUID.fromString(id), entity)
                 .map(record -> ResponseEntity.ok().body(record))
                 .orElse(ResponseEntity.notFound().build());
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Boolean> create(@PathVariable("id") String id) {
+    public ResponseEntity<Boolean> delete(@PathVariable("id") String id) {
         return profileService.deleteById(UUID.fromString(id))
                 .map(result -> ResponseEntity.ok().body(result))
                 .orElse(ResponseEntity.notFound().build());

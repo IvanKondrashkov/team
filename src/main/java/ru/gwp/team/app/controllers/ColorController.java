@@ -43,14 +43,14 @@ public final class ColorController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Color> create(@PathVariable("id") String id, @RequestBody Color entity) {
+    public ResponseEntity<Color> update(@PathVariable("id") String id, @RequestBody Color entity) {
         return colorService.update(UUID.fromString(id), entity)
                 .map(record -> ResponseEntity.ok().body(record))
                 .orElse(ResponseEntity.notFound().build());
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Boolean> create(@PathVariable("id") String id) {
+    public ResponseEntity<Boolean> delete(@PathVariable("id") String id) {
         return colorService.deleteById(UUID.fromString(id))
                 .map(result -> ResponseEntity.ok().body(result))
                 .orElse(ResponseEntity.notFound().build());
